@@ -1,0 +1,81 @@
+{
+	"python.pythonPath": "/home/harriszh/.local/python-3.11.3/bin/python3",
+	"inlayHint.enable": false,
+	//	"suggest.noselect": true,
+	"coc.preferences.currentFunctionSymbolAutoUpdate": true,
+	"snippets.textmateSnippetsRoots": [
+		"/home/harriszh/.vim/vscode-snippets"
+	],
+	"snippets.extends": {
+		"systemverilog": [
+			"verilog"
+		]
+	},
+	//"diagnostic.displayByAle": true,
+	"explorer.file.showHiddenFiles": true,
+	"languageserver": {
+		//		"svls": {
+		//			"command": "svls",
+		//			"filetypes": ["systemverilog", "verilog"]
+		//		}
+		"tagls": {
+			"command": "python3",
+			"args": [
+				"-m",
+				"tagls"
+			],
+			"filetypes": [
+				//"c",
+				//"cpp",
+				//"python"
+				"verilog",
+				"vhdl",
+				"systemverilog"
+			],
+			"initializationOptions": {
+				// Add the following line if you only want tagls as a fallback (also see "Custom LSP methods" section)
+				"register_official_methods": [],
+				// Add the following line for LeaderF support (https://github.com/daquexian/tagls/issues/1)
+				"gtags_provider": "leaderf"
+				// Add the following line for custom cache dir
+				// "cache_dir": "/tmp/gtags"
+			},
+			"settings": {}
+		},
+		"hdlChecker": {
+			"command": "hdl_checker",
+			"args": [
+				"--lsp"
+			],
+			"filetypes": [
+				"vhdl"
+			]
+		},
+		//"svlangserver": {
+		//	"command": "svlangserver",
+		//	"filetypes": [
+		//		"systemverilog",
+		//		"verilog"
+		//	],
+		//	"settings": {
+		//		"systemverilog.includeIndexing": [
+		//			"**/*.{sv,svh,v,vh}"
+		//		],
+		//		"systemverilog.excludeIndexing": [
+		//			"test/**/*.{v,sv}*"
+		//		],
+		//		"systemverilog.defines": [],
+		//		"systemverilog.launchConfiguration": "/home/harriszh/.local/bin/verilator -sv -Wall --lint-only",
+		//		"systemverilog.formatCommand": "/home/harriszh/local/verible/bin/verible-verilog-format"
+		//	}
+		//}
+		"verible": {
+			"command": "verible-verilog-ls",
+			"filetypes": ["systemverilog", "verilog"],
+			"settings": {
+				"verilog-trace-parser": "true"
+			}
+		}
+  },
+  "snippets.ultisnips.pythonPrompt": false
+}
